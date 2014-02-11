@@ -49,7 +49,7 @@
 \newcommand*{\bizcard@marks}{}
 \DeclareOption{none}{\renewcommand{\bizcard@marks}{}}
 \DeclareOption{frame}{\renewcommand{\bizcard@marks}{%
-    \multiput(0,0)(0,55){6}{\line(1,0){180}}%
+    \multiput(0,0)(0,54){6}{\line(1,0){180}}%
     %\multiput(0,0)(85,0){3}{\line(0,1){255}    }
     \line(0,1){275}\hskip85mm\line(0,1){275}\hskip10mm\line(0,1){275}\hskip85mm\line(0,1){275}%
     }}
@@ -59,10 +59,10 @@
 \multiput(178,0)(0,51){6}{\makebox(0.0,0.1)[c]{{\tiny +}}}}}
 \DeclareOption{flat}{\renewcommand{\bizcard@marks}{%
 \thinlines
-\multiput(0,-.5)(89,0){3}{\line(0,-1){5}}
-\multiput(0,255.5)(89,0){3}{\line(0,1){5}}
-\multiput(-.5,0)(0,51){6}{\line(-1,0){5}}
-\multiput(178.5,0)(0,51){6}{\line(1,0){5}}}}
+\multiput(0,-.5)(85,0){3}{\line(0,-1){5}}
+\multiput(0,270.5)(85,0){3}{\line(0,1){5}}
+\multiput(-.5,0)(0,54){6}{\line(-1,0){5}}
+\multiput(170.5,0)(0,54){6}{\line(1,0){5}}}}
 \ExecuteOptions{star}
 
 \ProcessOptions
@@ -77,14 +77,14 @@
 \newenvironment{bizcard}{%
   \setlength{\unitlength}{1mm}%
   \begin{lrbox}{\bizcard@box}%
-    \begin{picture}(85,55)%
+    \begin{picture}(85,54)%
       }{%
     \end{picture}%
   \end{lrbox}%
   \thispagestyle{empty}%
   \noindent\begin{picture}(180,275)(0,0)%
-    \multiput(0,0)(0,55){5}{\usebox{\bizcard@box}}
-    \multiput(95,0)(0,55){5}{\usebox{\bizcard@box}}
+    \multiput(0,0)(0,54){5}{\usebox{\bizcard@box}}
+    \multiput(85,0)(0,54){5}{\usebox{\bizcard@box}}
     \bizcard@marks
   \end{picture}
   }
