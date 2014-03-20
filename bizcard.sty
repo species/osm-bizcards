@@ -59,10 +59,10 @@
 \multiput(178,0)(0,51){6}{\makebox(0.0,0.1)[c]{{\tiny +}}}}}
 \DeclareOption{flat}{\renewcommand{\bizcard@marks}{%
 \thinlines
-\multiput(0,-.5)(85,0){3}{\line(0,-1){5}}
-\multiput(0,270.5)(85,0){3}{\line(0,1){5}}
-\multiput(-.5,0)(0,54){6}{\line(-1,0){5}}
-\multiput(170.5,0)(0,54){6}{\line(1,0){5}}}}
+\multiput(0,-.5)(90,0){3}{\line(0,-1){5}}
+\multiput(0,280.5)(90,0){3}{\line(0,1){5}}
+\multiput(-.5,0)(0,56){6}{\line(-1,0){5}}
+\multiput(180.5,0)(0,56){6}{\line(1,0){5}}}}
 \ExecuteOptions{star}
 
 \ProcessOptions
@@ -76,15 +76,18 @@
 
 \newenvironment{bizcard}{%
   \setlength{\unitlength}{1mm}%
+  
+%% this block defines the size of one card
   \begin{lrbox}{\bizcard@box}%
     \begin{picture}(85,54)%
       }{%
     \end{picture}%
   \end{lrbox}%
+
   \thispagestyle{empty}%
-  \noindent\begin{picture}(180,275)(0,0)%
-    \multiput(0,0)(0,54){5}{\usebox{\bizcard@box}}
-    \multiput(85,0)(0,54){5}{\usebox{\bizcard@box}}
+  \noindent\begin{picture}(190,275)(5,5)%
+    \multiput(0,0)(0,56){5}{\usebox{\bizcard@box}}
+    \multiput(95,0)(0,56){5}{\usebox{\bizcard@box}}
     \bizcard@marks
   \end{picture}
   }
